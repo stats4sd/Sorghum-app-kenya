@@ -1,0 +1,29 @@
+.performance-tab {
+  img{
+    max-height:400px;
+    max-width:400px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ion-segment{
+    padding-bottom: 1px;
+    padding-top: 1px;
+  }
+  ion-label{
+    margin-top: 0px;
+  }
+
+  .wrapText{
+    overflow: initial;
+    white-space: initial;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+  }
+}

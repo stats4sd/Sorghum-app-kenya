@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="info-tab">
+
+  <div>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-card>
+          <img src="img/seeds/{{seedData.Genotype}}.jpg" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
+          <ion-row>
+            <ion-col width-30>Genotype:</ion-col>
+            <ion-col width-70>{{seedData.Genotype}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Days to 50%:</ion-col>
+            <ion-col width-70>{{seedData["Days to 50%"]}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Grain yield:</ion-col>
+            <ion-col width-70>{{seedData["Grain yield"]}} t/ha</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Panicle Width:</ion-col>
+            <ion-col width-70>{{seedData["Panicle Width"]}}cm</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Panicle Length:</ion-col>
+            <ion-col width-70>{{seedData["Panicle Length"]}}cm</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Plant Height:</ion-col>
+            <ion-col width-70>{{seedData["Plant Height"]}}cm</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-30>Seed Colour:</ion-col>
+            <ion-col width-70>{{seedData["Seed Colour"]}}</ion-col>
+          </ion-row>
+          <ion-item>
+            <button primary clear item-left>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+            <button primary clear item-left>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+            <ion-note item-right>
+              1 Supplier
+            </ion-note>
+          </ion-item>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+  </div>
+  </ion-content>

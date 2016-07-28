@@ -1,3 +1,22 @@
-.seeds-overview {
+.seeds-overview-page {
+  .seedImage{
+    max-height:21vh;
+    max-width:100%
+  }
 
+  .miniIcon{
+    display: inline;
+    max-width: 60px;
+    max-height:9vh;
+    vertical-align: middle;
+  }
+
+  .seedStat{
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 500;
+  }
+  h3{
+    font-weight: 700;
+  }
 }

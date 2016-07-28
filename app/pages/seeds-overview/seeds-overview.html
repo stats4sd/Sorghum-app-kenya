@@ -1,18 +1,58 @@
-<!--
-  Generated template for the SeedsOverviewPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>seedsOverview</ion-title>
+  <ion-navbar primary no-border-bottom>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>Menu
+    </button>
+    <!--add show if wider device... <ion-title>Varieties</ion-title>-->
+    <ion-buttons end>
+      <button (click)="presentFilter()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>Filters
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="searchVarieties($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
+<ion-content class="schedule">
+  <ion-list>
+    <ion-item-sliding *ngFor="let seed of items">
+      <button ion-item (click)="goToSeedDetail(seed)">
+        <ion-row>
+          <ion-col width-50>
+            <h3>{{seed.Genotype}}</h3>
+            <img src="img/seeds/{{seed.Genotype}}.jpg" class="seedImage" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
+          </ion-col>
+          <ion-col width-50>
+            <div class="seedStat">
+              <img class="miniIcon" src="img/filters/grain yield.png">
+              <span><small>{{seed['Grain yield']}} t/ha</small></span>
+            </div>
+            <div class="seedStat">
+              <img class="miniIcon" src="img/filters/plant growth.png">
+              <span><small>{{seed['Days to 50%']}} days</small></span>
+            </div>
+            <div class="seedStat">
+              <img class="miniIcon" src="img/filters/cost.png">
+              <span><small>No Cost Data</small></span>
+            </div>
 
-<ion-content padding>
+          </ion-col>
+        </ion-row>
 
+      </button>
+      <ion-item-options>
+        <button favorite (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
+          Favorite
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+  <ion-list-header [hidden]="searchResults > 0">
+    No Varieties Found
+  </ion-list-header>
 </ion-content>

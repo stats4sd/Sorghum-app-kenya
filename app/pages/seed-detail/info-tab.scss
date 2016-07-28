@@ -1,0 +1,16 @@
+.info-tab {
+  img{
+    max-height:400px;
+    max-width:400px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrapText{
+    overflow: initial;
+    white-space: initial;
+  }
+  ion-label{
+    margin-top: 0px;
+  }
+}

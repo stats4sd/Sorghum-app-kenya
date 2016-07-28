@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {SeedsOverviewPage} from '../seeds-overview/seeds-overview'
+import {MenuPage} from "../menu/menu";
 
 interface Slide {
   title: string;
@@ -38,7 +39,7 @@ export class IntroPage {
     ];
   }
   startApp() {
-    this.nav.push(SeedsOverviewPage);
+    this.nav.setRoot(MenuPage);
   }
 
   onSlideChangeStart(slider) {

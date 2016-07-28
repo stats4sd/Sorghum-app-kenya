@@ -1,0 +1,48 @@
+{
+  "map": [
+    {
+      "name": "Rongo University College",
+      "lat": -0.824311,
+      "lng": 34.607856,
+      "center": true
+    }
+  ],
+
+  "seedData":
+  [
+    {"Type":"Variety","Genotype":"A11","Alt Names":null,"Image":"","Seed Colour":"White"},
+    {"Type":"Variety","Genotype":"C26","Alt Names":null,"Image":"C26.jpg","Seed Colour":"Light brown, Creamish-brown"},
+    {"Type":"Variety","Genotype":"E117b","Alt Names":null,"Image":"E117b.jpg","Seed Colour":"brown, Light brown"},
+    {"Type":"Variety","Genotype":"E16","Alt Names":null,"Image":"","Seed Colour":"brown"},
+    {"Type":"Variety","Genotype":"E17b","Alt Names":null,"Image":"","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"E18","Alt Names":null,"Image":"E18.jpg","Seed Colour":"cream"},
+    {"Type":"Variety","Genotype":"E22","Alt Names":null,"Image":"","Seed Colour":"brown"},
+    {"Type":"Variety","Genotype":"E33","Alt Names":null,"Image":"E33.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"E51","Alt Names":null,"Image":"","Seed Colour":"cream"},
+    {"Type":"Variety","Genotype":"E5-2","Alt Names":null,"Image":"E5-2.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"E54","Alt Names":null,"Image":"","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"E88","Alt Names":null,"Image":"","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"E90","Alt Names":null,"Image":"","Seed Colour":"Light cream"},
+    {"Type":"Variety","Genotype":"E91","Alt Names":null,"Image":"E91.jpg","Seed Colour":"cream"},
+    {"Type":"Variety","Genotype":"E93","Alt Names":null,"Image":"E93.jpg","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"E95a","Alt Names":null,"Image":"E95A.jpg","Seed Colour":"cream"},
+    {"Type":"Variety","Genotype":"E97","Alt Names":null,"Image":"E97.jpg","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"MUK 60","Alt Names":null,"Image":"MUK 60.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"N4","Alt Names":null,"Image":"N4.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"N57","Alt Names":null,"Image":"N57.jpg","Seed Colour":"Brown"},
+    {"Type":"Variety","Genotype":"N68","Alt Names":null,"Image":"N68.jpg","Seed Colour":"Brown"},
+    {"Type":"Variety","Genotype":"Nadundo 2","Alt Names":null,"Image":"","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"Nyadundo 1","Alt Names":null,"Image":"Nyadundo 1.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"Nyadundo 2","Alt Names":null,"Image":"Nyadundo 2.jpg","Seed Colour":"Red"},
+    {"Type":"Variety","Genotype":"Seredo","Alt Names":null,"Image":"Seredo.jpg","Seed Colour":"light brown"},
+    {"Type":"Variety","Genotype":"Serena","Alt Names":null,"Image":"","Seed Colour":"Light brown"},
+    {"Type":"Variety","Genotype":"T30b","Alt Names":null,"Image":"T30B.jpg","Seed Colour":"brown"},
+    {"Type":"Variety","Genotype":"T52","Alt Names":null,"Image":"T52.jpg","Seed Colour":"White"},
+    {"Type":"Variety","Genotype":"T53b","Alt Names":null,"Image":"T53B.jpg","Seed Colour":"brown"}
+  ],
+
+  "supplierData":[
+    {"Supplier":"Test1"}
+  ]
+
+}
