@@ -29,15 +29,16 @@
           <ion-col width-50>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/grain yield.png">
-              <span><small>{{seed['Grain yield']}} t/ha</small></span>
+              <!--<span><small>{{yield|summarise:"seed['Grain yield']"}} t/ha</small></span>-->
+              <small>{{seedSummaries[seed.Genotype]['Grain yield'].mean}} t/ha</small>
             </div>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/plant growth.png">
-              <span><small>{{seed['Days to 50%']}} days</small></span>
+              <span><small>{{seedSummaries[seed.Genotype]['Days to 50% Flowering'].mean}} days</small></span>
             </div>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/cost.png">
-              <span><small>No Cost Data</small></span>
+              <span><small>{{seedSummaries[seed.Genotype]['Cost'].mean}}</small></span>
             </div>
 
           </ion-col>

@@ -11,9 +11,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SeedMasterData {
   data: any;
+  summaries:any;
 
   constructor(private http: Http) {
     this.data = null;
+    this.summaries={}
   }
 
   load() {
@@ -25,9 +27,23 @@ export class SeedMasterData {
       this.http.get('data/seedMasterData.json').subscribe(res => {
         this.data=res.json();
         console.log(this.data);
+        this.mergeTrialData(this.data.trialData);
         resolve(this.data);
       });
     });
   }
+  //iterate over each trial, merge by genotype into key and arrays of values
+  mergeTrialData(data){
+    let summaries={};
+    for (let trial of data){
+      if(summaries[trial.Genotypes]==undefined){summaries[trial.Genotypes]={'name':'test'}}
+      for (let key in trial){
+        if(summaries[trial.Genotypes][key]==undefined){summaries[trial.Genotypes][key]=[]}
+        summaries[trial.Genotypes][key].push(trial[key])
+      }
+    }
+    this.summaries=summaries;
+  }
+
 }
 
