@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="07047c6f-7195-4a31-b68a-48189b20cccf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html" afterPath="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts" afterPath="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/providers/seed-master-data/seed-master-data.ts" afterPath="$PROJECT_DIR$/app/providers/seed-master-data/seed-master-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/data/seedMasterData.json" afterPath="$PROJECT_DIR$/www/data/seedMasterData.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html" afterPath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss" afterPath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts" afterPath="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/theme/app.variables.scss" afterPath="$PROJECT_DIR$/app/theme/app.variables.scss" />
     </list>
     <ignored path="SorghumApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,51 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="summarise-pipe.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/pipes/summarise-pipe.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seeds-overview.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="seeds-overview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0">
-              <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seeds-overview.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78547853">
-              <caret line="70" column="7" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seedMasterData.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/data/seedMasterData.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="45" column="433" selection-start-line="45" selection-start-column="417" selection-end-line="45" selection-end-column="438" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seed-master-data.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/providers/seed-master-data/seed-master-data.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3905429">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -95,7 +55,6 @@
         <option value="$PROJECT_DIR$/app/pages/intro/intro.scss" />
         <option value="$PROJECT_DIR$/app/pages/intro/intro.html" />
         <option value="$PROJECT_DIR$/www/data/data.json" />
-        <option value="$PROJECT_DIR$/app/theme/app.variables.scss" />
         <option value="$PROJECT_DIR$/app/app.ts" />
         <option value="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.scss" />
         <option value="$PROJECT_DIR$/app/pages/seed-detail/seed-detail.html" />
@@ -111,9 +70,6 @@
         <option value="$PROJECT_DIR$/app/pages/menu/menu.ts" />
         <option value="$PROJECT_DIR$/app/pages/seeds-overview/filters-popup/filters-popup.ts" />
         <option value="$PROJECT_DIR$/app/theme/app.core.scss" />
-        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts" />
-        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss" />
-        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html" />
         <option value="$PROJECT_DIR$/app/pages/seed-detail/performance-tab.html" />
         <option value="$PROJECT_DIR$/app/pages/seed-detail/seed-detail.ts" />
         <option value="$PROJECT_DIR$/app/pages/seed-detail/info-tab.html" />
@@ -123,6 +79,10 @@
         <option value="$PROJECT_DIR$/app/providers/seed-master-data/seed-master-data.ts" />
         <option value="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html" />
         <option value="$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts" />
+        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss" />
+        <option value="$PROJECT_DIR$/app/theme/app.variables.scss" />
+        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts" />
+        <option value="$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html" />
       </list>
     </option>
   </component>
@@ -137,10 +97,9 @@
     </gulpfiles>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -167,6 +126,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,6 +206,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="providers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -288,11 +267,53 @@
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seeds-overview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SorghumApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters-popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,11 +398,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24889868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -412,7 +433,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -687,34 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/theme/app.variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.807693">
-          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9454546">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/seed-detail/suppliers-tab.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.98470366">
@@ -749,7 +742,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/providers/seed-master-data/seed-master-data.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.3383584">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
@@ -757,7 +750,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/data/seedMasterData.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
+        <state vertical-scroll-proportion="1.3397548">
           <caret line="45" column="433" selection-start-line="45" selection-start-column="417" selection-end-line="45" selection-end-column="438" />
           <folding />
         </state>
@@ -771,18 +764,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html">
+    <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0">
-          <caret line="40" column="72" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.79731995">
+          <caret line="70" column="7" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.ts">
+    <entry file="file://$PROJECT_DIR$/app/theme/app.variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78547853">
-          <caret line="70" column="7" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+        <state vertical-scroll-proportion="-18.384615">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5769231">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/filters-popup/filters-popup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3065326">
+          <caret line="81" column="128" selection-start-line="81" selection-start-column="128" selection-end-line="81" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/seeds-overview/seeds-overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3905429">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding />
         </state>
       </provider>

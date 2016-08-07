@@ -1,5 +1,14 @@
-.filters-popup {
-  .reset-filters {
-    color: color($colors, danger);
+.filters-popup-page {
+  ion-range{
+    padding:0;
+  }
+  ion-label{
+    margin-top: 0px;
+    margin-bottom:0px;
+  }
+  .filterValueOffset{
+    text-align: center;
+    position: relative;
+    top:-15px;
   }
 }
