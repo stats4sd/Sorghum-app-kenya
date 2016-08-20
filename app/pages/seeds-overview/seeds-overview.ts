@@ -20,38 +20,39 @@ export class SeedsOverviewPage {
   v:any;
   searchResults:number;
   seedSummaries:any;
+  allItems:any;
+  filteredItems:any;
 
   constructor(private nav: NavController, private seedMasterData:SeedMasterData) {
     this.nav = nav;
     this.seedMasterData = seedMasterData;
-    console.log(this.seedMasterData);
-    this.initializeItems();
-    //calculate mean summaries
     this.seedSummaries=calculateStats(seedMasterData);
-    console.log(this.seedSummaries);
-    //console.log(this.seedSummaries);
+    this.initializeItems();
 
   }
 
   presentFilter() {
-    let modal = Modal.create(FiltersPopupPage, {});
+    let modal = Modal.create(FiltersPopupPage, this.allItems);
     this.nav.present(modal);
     modal.onDismiss(data => {
-      console.log(data);
-      if (data) {
-        this.searchResults = data;
+      if(data){
+        console.log('model dismissed');
+        console.log(data);
+        this.items=data;
       }
+
     });
   }
 
   goToSeedDetail(seedData) {
-    console.log(seedData);
     this.nav.push(SeedDetailPage, {seed:seedData});
   }
 
   initializeItems() {
-    this.items = this.seedMasterData.data.seedData;
-    this.searchResults=this.items.length;
+    this.allItems = this.seedSummaries;
+    this.filteredItems=this.seedSummaries;
+    console.log(this.filteredItems);
+    this.searchResults=this.filteredItems.length;
   }
 
   searchVarieties(event) {
@@ -77,16 +78,22 @@ export class SeedsOverviewPage {
 
 }
 
+//iterate over seed summaries and calculate mean. Push to new array
 function calculateStats(seedMasterData) {
+  var seedStatArray=[];
   var seedList=seedMasterData.data.seedData;
   var seedSummaries=seedMasterData.summaries;
   for (let seed of seedList) {
     if(seedSummaries[seed.Genotype]){
-      var stats = arrayMean(seedSummaries[seed.Genotype],['Grain yield','Days to 50% Flowering','Cost']);
-      seedSummaries[seed.Genotype]=stats
+      //calculate stats of listed fields - better in future to calculate type for all fields and summarise appropriately
+      var stats = arrayMean(seedSummaries[seed.Genotype],['Grain yield','Days to 50% Flowering','Cost', 'Panicle Width', 'Panicle Length', 'Plant Height']);
+      seedSummaries[seed.Genotype]=stats;
+      //convert back to array and rewrite genotype field to just be first entry out of trial summary array
+      seedSummaries[seed.Genotype].Genotypes=seedSummaries[seed.Genotype].Genotypes[0];
+      seedStatArray.push(seedSummaries[seed.Genotype])
     }
   }
-  return seedSummaries
+  return seedStatArray
 }
 
 function arrayMean(array,keys){
@@ -98,7 +105,7 @@ function arrayMean(array,keys){
       temp = temp + x;
     }
     var mean = temp / array[key].length;
-    array[key] = {values: array[key], mean: mean.toPrecision(3)};
+    array[key] = {values: array[key], mean: parseFloat(mean.toPrecision(3))};
   }
   }
   return array

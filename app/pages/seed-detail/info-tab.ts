@@ -10,9 +10,7 @@ export class InfoTabPage {
   seedData:any;
 
   constructor(private nav: NavController, params:NavParams) {
-    console.log(params);
-  this.seedData=params.data;
-    console.log(this.seedData);
+    this.seedData=params.data;
   }
 
 }

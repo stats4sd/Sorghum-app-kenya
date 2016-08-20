@@ -17,28 +17,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="schedule">
+<ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let seed of items">
+    <ion-item-sliding *ngFor="let seed of filteredItems">
       <button ion-item (click)="goToSeedDetail(seed)">
         <ion-row>
           <ion-col width-50>
-            <h3>{{seed.Genotype}}</h3>
-            <img src="img/seeds/{{seed.Genotype}}.jpg" class="seedImage" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
+            <h3>{{seed.Genotypes}}</h3>
+            <img src="img/seeds/{{seed.Genotypes}}.jpg" class="seedImage" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
           </ion-col>
           <ion-col width-50>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/grain yield.png">
               <!--<span><small>{{yield|summarise:"seed['Grain yield']"}} t/ha</small></span>-->
-              <small>{{seedSummaries[seed.Genotype]['Grain yield'].mean}} t/ha</small>
+              <small>{{seed['Grain yield'].mean}} t/ha</small>
             </div>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/plant growth.png">
-              <span><small>{{seedSummaries[seed.Genotype]['Days to 50% Flowering'].mean}} days</small></span>
+              <span><small>{{seed['Days to 50% Flowering'].mean}} days</small></span>
             </div>
             <div class="seedStat">
               <img class="miniIcon" src="img/filters/cost.png">
-              <span><small>{{seedSummaries[seed.Genotype]['Cost'].mean}}</small></span>
+              <span><small>{{seed['Cost'].mean}}</small></span>
             </div>
 
           </ion-col>

@@ -9,35 +9,35 @@
     <ion-list no-lines>
       <ion-item>
         <ion-card>
-          <img src="img/seeds/{{seedData.Genotype}}.jpg" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
+          <img src="img/seeds/{{seedData.Genotypes}}.jpg" onError="this.onerror=null;this.src='img/seeds/no seed image.png';">
           <ion-row>
             <ion-col width-30>Genotype:</ion-col>
-            <ion-col width-70>{{seedData.Genotype}}</ion-col>
+            <ion-col width-70><strong>{{seedData.Genotypes}}</strong></ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-30>Days to 50%:</ion-col>
-            <ion-col width-70>{{seedData["Days to 50%"]}}</ion-col>
+            <ion-col width-70><strong>{{seedData["Days to 50% Flowering"].mean}}</strong></ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-30>Grain yield:</ion-col>
-            <ion-col width-70>{{seedData["Grain yield"]}} t/ha</ion-col>
+            <ion-col width-70><strong>{{seedData["Grain yield"].mean}}t/ha</strong></ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-30>Panicle Width:</ion-col>
-            <ion-col width-70>{{seedData["Panicle Width"]}}cm</ion-col>
+            <ion-col width-70><strong>{{seedData["Panicle Width"].mean}}cm</strong></ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-30>Panicle Length:</ion-col>
-            <ion-col width-70>{{seedData["Panicle Length"]}}cm</ion-col>
+            <ion-col width-70><strong>{{seedData["Panicle Length"].mean}}cm</strong></ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-30>Plant Height:</ion-col>
-            <ion-col width-70>{{seedData["Plant Height"]}}cm</ion-col>
+            <ion-col width-70><strong>{{seedData["Plant Height"].mean}}cm</strong></ion-col>
           </ion-row>
-          <ion-row>
+         <!-- <ion-row>
             <ion-col width-30>Seed Colour:</ion-col>
             <ion-col width-70>{{seedData["Seed Colour"]}}</ion-col>
-          </ion-row>
+          </ion-row>-->
           <ion-item>
             <button primary clear item-left>
               <ion-icon name="thumbs-up"></ion-icon>
