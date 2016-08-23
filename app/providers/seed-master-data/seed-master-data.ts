@@ -12,10 +12,12 @@ import 'rxjs/add/operator/map';
 export class SeedMasterData {
   data: any;
   summaries:any;
+  trialMeta:any;
 
   constructor(private http: Http) {
     this.data = null;
-    this.summaries={}
+    this.summaries={};
+    this.trialMeta={};
   }
 
   load() {
@@ -29,6 +31,7 @@ export class SeedMasterData {
         console.log(this.data);
         this.mergeTrialData(this.data.trialData);
         this.listSuppliersBySeed(this.data.supplierData);
+        this.sortTrialsBySeed(this.data.trialData);
         resolve(this.data);
       });
     });
@@ -38,12 +41,15 @@ export class SeedMasterData {
     let summaries={};
     for (let trial of data){
       if(summaries[trial.Genotypes]==undefined){summaries[trial.Genotypes]={}}
+      if(this.trialMeta[trial['Trial Name']]==undefined){this.trialMeta[trial['Trial Name']]={stats:{},trials:[]}}
+      this.trialMeta[trial['Trial Name']].trials.push(trial);
       for (let key in trial){
         if(summaries[trial.Genotypes][key]==undefined){summaries[trial.Genotypes][key]=[]}
         summaries[trial.Genotypes][key].push(trial[key])
       }
     }
     this.summaries=summaries;
+    console.log(this.trialMeta);
   }
 
   //iterate over supplier data and convert to make list of suppliers by seed genotype
@@ -56,6 +62,12 @@ export class SeedMasterData {
         this.data.suppliersBySeed[variety].push(supplier)
       }
     }
+  }
+
+  //iterate over trial data and seperate into individual trials as well as trials by seed
+  sortTrialsBySeed(data){
+    console.log(data);
+
   }
 
 }
