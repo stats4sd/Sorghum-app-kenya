@@ -16,9 +16,9 @@
       <ion-label>
         <p>Grain Yield</p>
       </ion-label>
-        <ion-range [(ngModel)]="filters['Grain yield']" (ionChange)="rangeChange('Grain yield')" min="{{boundArrays['Grain yield'].min}}" step="{{boundArrays['Grain yield'].step}}" max="{{boundArrays['Grain yield'].max}}" snaps="true" dualKnobs="true" pin="true">
-          <ion-icon range-left small danger name="square-outline"></ion-icon>
-          <ion-icon range-right danger name="square-outline"></ion-icon>
+        <ion-range [(ngModel)]="activeFilters['Grain yield']" (ionChange)="rangeChange('Grain yield')" min="{{boundArrays['Grain yield'].min}}" step="{{boundArrays['Grain yield'].step}}" max="{{boundArrays['Grain yield'].max}}" snaps="true" dualKnobs="true" pin="true">
+          <!--<ion-icon range-left small danger name="square-outline"></ion-icon>
+          <ion-icon range-right danger name="square-outline"></ion-icon>-->
         </ion-range>
     </ion-item>
     <!--<div class="filterValueOffset">{{filters.grainYield.lower}} to {{filters.grainYield.upper}}</div>-->
@@ -28,22 +28,24 @@
         <ion-label>
           <p>Days to 50% Flowering</p>
         </ion-label>
-        <ion-range [(ngModel)]="filters['Days to 50% Flowering']" (ionChange)="rangeChange('Days to 50% Flowering')" min="{{boundArrays['Days to 50% Flowering'].min}}" step="{{boundArrays['Days to 50% Flowering'].step}}" max="{{boundArrays['Days to 50% Flowering'].max}}" snaps="true" dualKnobs="true" pin="true">
-          <ion-icon range-left small danger name="square-outline"></ion-icon>
-          <ion-icon range-right danger name="square-outline"></ion-icon>
+        <ion-range [(ngModel)]="activeFilters['Days to 50% Flowering']" (ionChange)="rangeChange('Days to 50% Flowering')" min="{{boundArrays['Days to 50% Flowering'].min}}" step="{{boundArrays['Days to 50% Flowering'].step}}" max="{{boundArrays['Days to 50% Flowering'].max}}" snaps="true" dualKnobs="true" pin="true">
+         <!-- <ion-icon range-left small danger name="square-outline"></ion-icon>
+          <ion-icon range-right danger name="square-outline"></ion-icon>-->
         </ion-range>
       </ion-item>
-    <ion-item-divider >Resistance</ion-item-divider>
+   <!-- <ion-item-divider >Resistance</ion-item-divider>
     <ion-item>
       <p>No Resistance Data Available</p>
     </ion-item>
-    <ion-item-divider >Seller</ion-item-divider>
+    <ion-item-divider >Seller</ion-item-divider>-->
+<!--
     <ion-item>
       <ion-label>
         <p>Rongo University College</p>
       </ion-label>
-      <ion-toggle [(ngModel)]="filters.Suppliers['Rongo University College']" (ionChange)="suppliersFilter('Rongo University College')"></ion-toggle>
+      <ion-toggle [(ngModel)]="activeFilters.Suppliers['Rongo University College']" (ionChange)="suppliersFilter('Rongo University College')"></ion-toggle>
     </ion-item>
+-->
   </ion-list>
 
   <ion-list>

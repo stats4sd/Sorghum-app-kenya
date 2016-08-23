@@ -28,6 +28,7 @@ export class SeedMasterData {
         this.data=res.json();
         console.log(this.data);
         this.mergeTrialData(this.data.trialData);
+        this.listSuppliersBySeed(this.data.supplierData);
         resolve(this.data);
       });
     });
@@ -36,13 +37,25 @@ export class SeedMasterData {
   mergeTrialData(data){
     let summaries={};
     for (let trial of data){
-      if(summaries[trial.Genotypes]==undefined){summaries[trial.Genotypes]={'name':'test'}}
+      if(summaries[trial.Genotypes]==undefined){summaries[trial.Genotypes]={}}
       for (let key in trial){
         if(summaries[trial.Genotypes][key]==undefined){summaries[trial.Genotypes][key]=[]}
         summaries[trial.Genotypes][key].push(trial[key])
       }
     }
     this.summaries=summaries;
+  }
+
+  //iterate over supplier data and convert to make list of suppliers by seed genotype
+  listSuppliersBySeed(data){
+    this.data.suppliersBySeed={};
+    for (let supplier of data){
+      var varieties=supplier.Varieties;
+      for (let variety of varieties){
+        if (!this.data.suppliersBySeed[variety]){this.data.suppliersBySeed[variety]=[]}
+        this.data.suppliersBySeed[variety].push(supplier)
+      }
+    }
   }
 
 }

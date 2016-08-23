@@ -7,7 +7,7 @@ import {PerformanceTabPage} from "./performance-tab";
 
 @Component({
   template: `
-  <ion-header><ion-navbar><ion-title>{{seedData.Genotype}}</ion-title></ion-navbar></ion-header>
+  <ion-header><ion-navbar><ion-title>{{seedData.Genotypes}}</ion-title></ion-navbar></ion-header>
     <ion-tabs>
         <ion-tab tabIcon="information-circle" tabTitle="Seed" [root]="tab1" [rootParams]="seedData"></ion-tab>
         <ion-tab tabIcon="cart" tabTitle="Suppliers" [root]="tab2" [rootParams]="seedData"></ion-tab>

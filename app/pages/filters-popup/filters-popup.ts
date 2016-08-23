@@ -9,49 +9,45 @@ import {SeedMasterData} from "../../providers/seed-master-data/seed-master-data"
 export class FiltersPopupPage {
   filteredData:any;
   boundArrays:any;
-  filters:any;
-  filterKeysNumerical:any;
-  filterKeysSuppliers:any;
+  filterKeysNumerical:any=['Grain yield','Days to 50% Flowering'];
+  filterKeysSuppliers:any=['Rongo University College'];
   masterData:any;
-  continue:boolean=true;
+  activeFilters:any;
 
+//note - need to pass active filters back and forth...
 
   constructor(private viewCtrl:ViewController, private params:NavParams) {
+    //load any previous filters and filtered data from params, set filter bounds and apply active filters
     this.params=params;
-    this.masterData=json2Array(this.params.data);
-    console.log(this.params.data);
-    this.cacheFilterResults;
-    this.filterKeysNumerical=['Grain yield','Days to 50% Flowering'];
+    this.masterData=params.data.masterData;
+    this.filteredData=params.data.filteredData;
     this.setFilterBounds(this.filterKeysNumerical);
-    this.filterKeysSuppliers=['Rongo University College'];
-    this.resetFilters();
+    this.activeFilters=params.data.activeFilters;
+    if(!this.activeFilters){this.resetFilters()}
   }
 
-  cacheFilterResults(){
-
-  }
 
   resetFilters() {
-    this.filters = {};
+    this.activeFilters={};
+    console.log('resetting filters');
+    this.filteredData=this.masterData;
     for (let key of this.filterKeysNumerical) {
-      if(!this.filters[key]){this.filters[key]={}}
-      this.filters[key] = {
+      if(!this.activeFilters[key]){this.activeFilters[key]={}}
+      this.activeFilters[key] = {
         lower: this.boundArrays[key].min,
         upper: this.boundArrays[key].max,
         step: this.boundArrays[key].step
       }
     }
     for (let key of this.filterKeysSuppliers) {
-      this.filters.Suppliers={};
-      this.filters.Suppliers[key] = true
+      this.activeFilters.Suppliers={};
+      this.activeFilters.Suppliers[key] = true
     }
   }
 
   applyFilters() {
-    // Pass back a new array of track names to exclude
     console.log('applying filters');
-    //var data = array2Json(this.filteredData);
-    this.dismiss(this.filteredData);
+    this.dismiss({filteredData:this.filteredData, activeFilters:this.activeFilters});
   }
 
   dismiss(data) {
@@ -63,7 +59,6 @@ export class FiltersPopupPage {
     this.boundArrays={};
     let seeds=this.masterData;
     for (let seed of seeds){
-      console.log(seed)
       for(let key of keys){
         if(seed[key]){
           let val=seed[key].mean;
@@ -75,7 +70,6 @@ export class FiltersPopupPage {
     }
     //split size as deciles
     for (let bound in this.boundArrays){
-      console.log(this.boundArrays);
       this.boundArrays[bound].step=(this.boundArrays[bound].max-this.boundArrays[bound].min)/10;
       /*this.boundArrays[bound].step=0.5;*/
     }
@@ -83,8 +77,13 @@ export class FiltersPopupPage {
   }
 
   rangeChange(){
-    console.log(this.filteredData.length)
-    for(let i=0;i<this.filteredData.length;i++){
+    console.log('range changed');
+    this.filteredData=this.masterData;
+    for (let numericFilter of this.filterKeysNumerical){
+      this.filterNumeric(numericFilter)
+    }
+    console.log(this.filteredData);
+    /*for(let i=0;i<this.filteredData.length;i++){
       if(this.filteredData[i]){var item=this.filteredData[i]}
       else{break}
       itemTest:{
@@ -99,7 +98,19 @@ export class FiltersPopupPage {
         }
       }
     }
-    console.log(tempString(this.filteredData))
+    console.log(tempString(this.filteredData))*/
+  }
+  filterNumeric(filterKey){
+    var newFiltered=[];
+    if(this.activeFilters[filterKey]){
+      for (let seed of this.filteredData){
+        var mean =parseFloat(seed[filterKey].mean);
+        if(mean>this.activeFilters[filterKey].lower && mean<this.activeFilters[filterKey].upper){
+          newFiltered.push(seed)
+        }
+      }
+    }
+    this.filteredData=newFiltered;
   }
 
   suppliersFilter(supplier){

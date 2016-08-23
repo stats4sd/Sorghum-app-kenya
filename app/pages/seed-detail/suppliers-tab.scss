@@ -1,10 +1,35 @@
-.suppliers-tab {
-  img{
-    max-height:400px;
-    max-width:400px;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
+.suppliers-tab-page {
+  #map{
+    height:50vh;
+    width:100%;
+  }
+  .supplier-image{
+    max-height:100px;
+    max-width:200px;
+    display:inline-block;
+    /*margin-left: auto;
+    margin-right: auto;*/
+  }
+  .zoom-warning{
+    position:absolute;;
+    top:0;
+    left:16px;
+    width: 100vw -32px;;
+    padding-right:16px;
+    height:20px;
+    z-index: 100;
+    background-color: rgba(238,238,41,0.4);
+    font-weight: 600;
+  }
+  .map-index{
+    font-weight: 600;
+    border: 3px black solid;
+    text-align: center;
+    margin:auto;
+    display: table;
+  }
+  .supplier-index{
+    font-size: large;
   }
   ion-segment{
     padding-bottom: 1px;
