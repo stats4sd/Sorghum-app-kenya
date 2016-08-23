@@ -22,6 +22,9 @@ export class SeedsOverviewPage {
   seedSummaries:any;
   allItems:any;
   filteredItems:any;
+  filteredItemsPreSearch:any;
+  activeFilters:any;
+  searchQuery:any;
 
   constructor(private nav: NavController, private seedMasterData:SeedMasterData) {
     this.nav = nav;
@@ -32,13 +35,15 @@ export class SeedsOverviewPage {
   }
 
   presentFilter() {
-    let modal = Modal.create(FiltersPopupPage, this.allItems);
+    let modal = Modal.create(FiltersPopupPage, {masterData:this.allItems, activeFilters:this.activeFilters, filteredData:this.filteredItems});
     this.nav.present(modal);
     modal.onDismiss(data => {
       if(data){
-        console.log('model dismissed');
+        console.log('modal dismissed');
         console.log(data);
-        this.items=data;
+        this.filteredItems=data.filteredData;
+        this.filteredItemsPreSearch=data.filteredData;
+        this.activeFilters=data.activeFilters;
       }
 
     });
@@ -51,28 +56,27 @@ export class SeedsOverviewPage {
   initializeItems() {
     this.allItems = this.seedSummaries;
     this.filteredItems=this.seedSummaries;
+    this.filteredItemsPreSearch=this.filteredItems;
     console.log(this.filteredItems);
     this.searchResults=this.filteredItems.length;
   }
 
   searchVarieties(event) {
     // Reset items back to all of the items
-    this.initializeItems();
+    this.filteredItems=this.filteredItemsPreSearch;
     // set q to the value of the searchbar
-    var q = event.srcElement.value;
-    console.log(q);
+    var q = this.searchQuery;
     // if the value is an empty string don't filter the items
     if (q.trim() == '') {
       return;
     }
-    this.items = this.items.filter((v) => {
-      console.log(v.Genotype.toLowerCase().indexOf(q.toLowerCase()));
-      if (v.Genotype.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+    this.filteredItems = this.filteredItems.filter((v) => {
+      if (v.Genotypes.toLowerCase().indexOf(q.toLowerCase()) > -1) {
         return true;
       }
       return false;
     });
-    this.searchResults=this.items.length;
+    this.searchResults=this.filteredItems.length;
   }
 
 

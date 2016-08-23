@@ -3,11 +3,12 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {IntroPage} from './pages/intro/intro';
 import {SeedMasterData} from './providers/seed-master-data/seed-master-data'
+import {MapService} from "./providers/map-provider/map-provider";
 
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers:[SeedMasterData]
+  providers:[[SeedMasterData],[MapService]]
 })
 export class MyApp {
 

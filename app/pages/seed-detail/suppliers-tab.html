@@ -4,15 +4,23 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding class="suppliers-tab">
+    <p class="zoom-warning" *ngIf="zoomWarning==true">Zooming further will require internet access</p>
+    <div id="map"></div>
     <ion-list no-lines>
         <ion-item>
-            <ion-card>
-                <img src="img/suppliers/Rongo University College.jpg">
+            <ion-card *ngFor="let supplier of activeSeedSuppliers; let i=index">
+                <!--<span class="map-index">{{i}} </span>-->
+                    <strong class="supplier-index">{{i+1}}</strong>
+                    <!--<strong class="fa-stack-1x calendar-text">{{i}}</strong>-->
+                    <img class="supplier-image" src="img/suppliers/{{supplier.Image}}">
+
                 <ion-card-content>
-                    <h3>Rongo University College</h3>
-                    <h3>P.O.Box 103-40404</h3>
-                    <h3>Dr. Evans O. Ouma</h3>
-                    <ion-item>
+                    <h3>{{supplier.Name}}</h3>
+                    <h3>{{supplier['Physical Address']}}</h3>
+                    <h3><ion-icon name="person"></ion-icon> {{supplier['Contact Person']}}</h3>
+                    <h3><ion-icon name="call"></ion-icon> {{supplier['Contact Number']}}</h3>
+                    <h3><ion-icon name="mail"></ion-icon> {{supplier['Contact Email']}}</h3>
+                    <!--<ion-item>
                         <button primary clear item-left>
                             <ion-icon name="mail"></ion-icon>
                             Email
@@ -25,7 +33,7 @@
                             <ion-icon name="map"></ion-icon>
                             Map
                         </button>
-                    </ion-item>
+                    </ion-item>-->
                     <!--<button>
                         <ion-icon name="ion-social-whatsapp"></ion-icon>
                         Whatsapp
