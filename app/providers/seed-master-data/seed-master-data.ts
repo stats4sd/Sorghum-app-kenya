@@ -31,12 +31,11 @@ export class SeedMasterData {
         console.log(this.data);
         this.mergeTrialData(this.data.trialData);
         this.listSuppliersBySeed(this.data.supplierData);
-        this.sortTrialsBySeed(this.data.trialData);
         resolve(this.data);
       });
     });
   }
-  //iterate over each trial, merge by genotype into key and arrays of values
+  //iterate over each trial, merge by genotype into key and arrays of values and also push seperate trials into meta
   mergeTrialData(data){
     let summaries={};
     for (let trial of data){
@@ -48,8 +47,11 @@ export class SeedMasterData {
         summaries[trial.Genotypes][key].push(trial[key])
       }
     }
+    //calculate overall summary stats of each trial name
+    for (let trial in this.trialMeta){
+      this.trialMeta[trial].stats=this.calculateStats(this.trialMeta[trial].trials)
+    }
     this.summaries=summaries;
-    console.log(this.trialMeta);
   }
 
   //iterate over supplier data and convert to make list of suppliers by seed genotype
@@ -63,11 +65,34 @@ export class SeedMasterData {
       }
     }
   }
-
-  //iterate over trial data and seperate into individual trials as well as trials by seed
-  sortTrialsBySeed(data){
-    console.log(data);
-
+  //iterate over each key in array, pushing stats to calculate sumx and n for numeric data,
+  //as well as tracking all values and unique counts for all data
+  calculateStats(array){
+    var stats={};
+    for (let item of array){
+      //iterate over each json key, if create unique count as well as averages
+      //also push lat/lon to one variable to make easier to track
+      if(item['Location Latitude']&&item['Location Longitude']){
+        item.Location=item['Location Latitude']+','+item['Location Longitude']
+      }
+      for (let key in item){
+        if (!stats[key]){stats[key]={n:0,sumX:0,values:[],uniqueCount:{}}}
+        if(typeof item[key]=='number') {
+          stats[key].sumX = stats[key].sumX + item[key];
+        }
+          stats[key].n = stats[key].n + 1;
+          if(!stats[key].uniqueCount[item[key]]){stats[key].uniqueCount[item[key]]=0}
+          stats[key].uniqueCount[item[key]]++;
+          stats[key].values.push(item[key]);
+        }
+      }
+    for (let key in stats){
+      if(stats[key].sumX!=0){
+        stats[key].mean=parseFloat((stats[key].sumX/stats[key].n).toPrecision(3));
+      }
+    }
+    //calculate overall means and return as formatted
+    return(stats)
   }
 
 }

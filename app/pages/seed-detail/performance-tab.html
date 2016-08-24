@@ -4,47 +4,31 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding class="performance-tab">
+  <h2>Summary</h2>
+  <div id="summaryVis"></div>
+  <h2>By Research Trial</h2>
     <ion-list no-lines>
-        <ion-item>
+        <ion-item *ngFor="let trial of trialMetaArray; let i=index">
             <ion-card>
                 <ion-card-label>
-                    <h3><i>Rongo University College 2013-14</i></h3>
+                    <h3><i>{{trial.trialName}}</i></h3>
                 </ion-card-label>
                 <ion-card-content>
-                  <div id="vis"></div>
+                  <!--<div id="vis{{i}}"></div>-->
                     <table>
+                      <!--column headings-->
                         <tr>
                             <td></td>
-                            <td><strong>{{seedData.Genotype}}</strong></td>
+                            <td><strong>{{seedData.Genotypes}}</strong></td>
                             <td><strong>Trial Average</strong></td>
                         </tr>
-                        <tr>
-                            <td>Grain Yield (t/ha)</td>
-                            <td>{{seedData["Grain yield"]}}</td>
-                            <td>2.87</td>
-                        </tr>
-                        <tr>
-                            <td>Plant Height (cm)</td>
-                            <td>{{seedData["Plant Height"]}}</td>
-                            <td>159</td>
-                        </tr>
-                        <tr>
-                            <td>Panicle Length (cm)</td>
-                            <td>{{seedData["Panicle Length"]}}</td>
-                            <td>20.7</td>
-                        </tr>
-                        <tr>
-                            <td>Panicle width (cm)</td>
-                            <td>{{seedData["Panicle Width"]}}</td>
-                            <td>10.1</td>
-                        </tr>
-                        <tr>
-                            <td>Days to 50% flowering</td>
-                            <td>{{seedData["Days to 50%"]}}</td>
-                            <td>74.4</td>
+                        <tr *ngFor = "let field of summaryFields">
+                            <td>{{field.name}} ({{field.units}})</td>
+                            <td>{{trial.seedStats[field.name].mean}}</td>
+                            <td>{{trial.stats[field.name].mean}}</td>
                         </tr>
                     </table>
-                    <a href="#">View full trial results</a>
+                    <a href="#" (click)="showFullResults(trial)" >View full trial results (grain yield)</a>
                     <!-- <h2>Performance Data</h2>
                  <div class="wrapText">
                      <p><i>Data from individual research trials will go here, including summary of performance and comparison to other varieties</i></p>
