@@ -31,7 +31,6 @@ export class SeedsOverviewPage {
     this.seedMasterData = seedMasterData;
     this.seedSummaries=calculateStats(seedMasterData);
     this.initializeItems();
-
   }
 
   presentFilter() {

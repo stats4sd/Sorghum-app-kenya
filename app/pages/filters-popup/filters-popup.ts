@@ -1,36 +1,43 @@
 import { Component } from '@angular/core';
-import { ViewController, NavParams } from 'ionic-angular';
+import { ViewController, NavParams, Toast } from 'ionic-angular';
 import {SeedMasterData} from "../../providers/seed-master-data/seed-master-data";
+import {NavController} from "ionic-angular/index";
 
 @Component({
   templateUrl: 'build/pages/filters-popup/filters-popup.html',
 })
 
 export class FiltersPopupPage {
+  public remaining:number;
   filteredData:any;
   boundArrays:any;
   filterKeysNumerical:any=['Grain yield','Days to 50% Flowering'];
   filterKeysSuppliers:any=['Rongo University College'];
   masterData:any;
   activeFilters:any;
+  filtersEnabled:boolean=false;
 
 //note - need to pass active filters back and forth...
 
-  constructor(private viewCtrl:ViewController, private params:NavParams) {
+  constructor(private viewCtrl:ViewController, private params:NavParams, private nav:NavController) {
     //load any previous filters and filtered data from params, set filter bounds and apply active filters
     this.params=params;
+    this.nav=nav;
     this.masterData=params.data.masterData;
     this.filteredData=params.data.filteredData;
     this.setFilterBounds(this.filterKeysNumerical);
     this.activeFilters=params.data.activeFilters;
     if(!this.activeFilters){this.resetFilters()}
+    this.remaining=this.filteredData.length
   }
 
 
   resetFilters() {
     this.activeFilters={};
+    this.filtersEnabled=false;
     console.log('resetting filters');
     this.filteredData=this.masterData;
+    this.remaining=this.masterData.length;
     for (let key of this.filterKeysNumerical) {
       if(!this.activeFilters[key]){this.activeFilters[key]={}}
       this.activeFilters[key] = {
@@ -53,6 +60,16 @@ export class FiltersPopupPage {
   dismiss(data) {
     this.viewCtrl.dismiss(data);
   }
+
+ /* presentToast(){
+    let toast = Toast.create({
+      message:this.remaining +' varieties remaining',
+      duration: 1000,
+      position: 'top',
+      showCloseButton: true
+    });
+    this.nav.present(toast);
+  }*/
 
   //iterate data over array of keys, calculating max and min values for each key and rounding
   setFilterBounds(keys){
@@ -83,23 +100,9 @@ export class FiltersPopupPage {
       this.filterNumeric(numericFilter)
     }
     console.log(this.filteredData);
-    /*for(let i=0;i<this.filteredData.length;i++){
-      if(this.filteredData[i]){var item=this.filteredData[i]}
-      else{break}
-      itemTest:{
-        for(let key of this.filterKeysNumerical){
-          var mean=parseFloat(item[key].mean)
-          if(mean<this.filters[key].lower || mean>this.filters[key].upper)
-          {
-          this.filteredData.splice(i,1);
-          i=i-1;
-            break itemTest;
-          }
-        }
-      }
-    }
-    console.log(tempString(this.filteredData))*/
+    this.remaining = this.filteredData.length;
   }
+
   filterNumeric(filterKey){
     var newFiltered=[];
     if(this.activeFilters[filterKey]){
