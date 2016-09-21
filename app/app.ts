@@ -4,7 +4,13 @@ import {StatusBar} from 'ionic-native';
 import {IntroPage} from './pages/intro/intro';
 import {SeedMasterData} from './providers/seed-master-data/seed-master-data'
 import {MapService} from "./providers/map-provider/map-provider";
+import {provideCloud, CloudSettings} from '@ionic/cloud-angular';
 
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'ee9ac14c'
+  }
+};
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
@@ -26,4 +32,4 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [provideCloud(cloudSettings)]);
